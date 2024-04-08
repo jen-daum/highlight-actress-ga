@@ -75,7 +75,8 @@ header a:hover {
 
 .long-portrait {
   width: 100%; /* Ensures the image takes full width of its container */
-  height: auto;
+  height: 100%;
+  max-width: 60vh;
   margin-top: 5px;
 }
 
@@ -88,6 +89,23 @@ header a:hover {
   grid-template-columns: 1fr 1fr;
 
   background-color: #0b0b0b; /*matching img colour*/
+  color: white;
+}
+
+.container-why table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container-why th,
+.container-why td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.container-why th {
+  background-color: #bf4e62;
   color: white;
 }
 
@@ -253,6 +271,13 @@ ul li a:hover {
 
 /* --- average tablets sizes*/
 @media (min-width: 768px) and (max-width: 1023px) {
+  .long-portrait {
+    display: none;
+  }
+  .grid-2-columns {
+    display: block;
+    padding: 20px 20px;
+  }
   .card {
     flex: 0 0 calc(33.333% - 30px);
     margin-bottom: 15px;
