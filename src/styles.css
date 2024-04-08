@@ -22,13 +22,14 @@ body {
 /* Header styles */
 header {
   background-color: white;
-  background-image: url(../img/gillian-anderson-cover-right.png);
+  background-image: url("../img/gillian-anderson-cover-right.png");
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
-  min-height: 40rem;
+  background-size: cover; /* Adjusts to ensure full height is always visible */
+  background-position: center; /* Centers by default */
+  min-height: 40rem; /* Adjust the min-height as necessary */
   text-align: center;
-  padding-top: 45px;
+  padding: 50px 0;
+  transition: background-position 0.3s ease, background-size 0.3s ease; /* Smooth transition */
 }
 
 header h3 {
@@ -134,8 +135,67 @@ header a:hover {
   text-align: center;
 }
 
+/* Footer styles */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+footer h3 {
+  margin-bottom: 20px;
+}
+
+footer p,
+footer a {
+  color: #bbb;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.grid-2-columns-with-first-narrow {
+  grid-template-columns: 1fr 3fr;
+  column-gap: 40px;
+}
+
+.social-media-links {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.social-media-links a {
+  flex: 0 1 auto;
+  margin: 0 15px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  color: #8a2be2;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
 /* media resizing */
 @media (max-width: 768px) {
+  header {
+    background-position: left center; /* Moves image to the left */
+  }
+
   .grid-2-columns {
     display: block;
     padding: 20px 20px;
@@ -145,6 +205,7 @@ header a:hover {
     display: none;
   }
 }
+
 @media (min-width: 768px) {
   .card {
     flex: 0 0 calc(33.333% - 30px);
@@ -154,21 +215,25 @@ header a:hover {
   .grid-3-columns {
     justify-content: space-between;
   }
+}
 
-  @media (min-width: 1024px) {
-    .card:hover .img-responsive {
-      filter: grayscale(0%);
-    }
-
-    .card:hover {
-      background-color: var(--accent-lighter);
-    }
+@media (min-width: 1024px) {
+  .card:hover .img-responsive {
+    filter: grayscale(0%);
   }
 
-  @media (min-width: 1200px) {
-    header {
-      background-size: 70%;
-      background-position: right top 20%;
-    }
+  .card:hover {
+    background-color: var(--accent-lighter);
+  }
+
+  header {
+    background-size: cover; /* Keeps the image fully covering the area */
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    background-size: 70%; /* Adds a slight zoom */
+    background-position: right center; /* Ensures right alignment with top offset */
   }
 }
