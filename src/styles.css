@@ -85,6 +85,7 @@ header a:hover {
 
 .grid-2-columns {
   grid-template-columns: 1fr 1fr;
+
   background-color: #0b0b0b; /*matching img colour*/
   color: white;
 }
@@ -93,7 +94,6 @@ header a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 20px; /* Sets the gap between items */
 }
 
 .card {
@@ -113,7 +113,7 @@ header a:hover {
 
 .img-responsive {
   width: 90%;
-  margin-top: 25px;
+  margin-top: 5px;
   border-radius: 10px;
   object-fit: cover;
   filter: grayscale(100%);
