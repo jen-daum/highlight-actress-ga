@@ -87,7 +87,7 @@ header a:hover {
 
 .grid-2-columns {
   grid-template-columns: 1fr 1fr;
-
+  padding: 5px;
   background-color: #0b0b0b; /*matching img colour*/
   color: white;
 }
