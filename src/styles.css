@@ -18,15 +18,6 @@ body {
   padding: 0;
 }
 
-header {
-  background-color: white;
-  background-image: url(../img/gillian-anderson-cover.png);
-  background-repeat: no-repeat;
-  margin: auto;
-  padding: 0 70px;
-  height: 40rem;
-}
-
 .img-responsive {
   /*temp while i work on size*/
   max-width: 40rem;
@@ -35,6 +26,12 @@ header {
 
 /* Header styles */
 header {
+  background-color: white;
+  background-image: url(../img/gillian-anderson-cover-right.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  /background-size: contain;
+  min-height: 40rem;
   text-align: center;
   padding: 50px 0;
 }
@@ -66,4 +63,12 @@ header a {
 
 header a:hover {
   background: var(--accent-darker);
+}
+
+/* media resizing */
+@media (min-width: 1200px) {
+  header {
+    background-size: 70%; /* Slightly larger than 'contain' to zoom in */
+    background-position: right top 20%;
+  }
 }
