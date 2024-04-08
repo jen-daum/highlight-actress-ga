@@ -19,13 +19,6 @@ body {
   padding: 0;
 }
 
-/* Styles for images within cards to ensure they're centered and rounded */
-.img-responsive {
-  width: 90%; /* Adjust width as needed */
-  margin-top: 15px; /* Adds some space at the top inside the card */
-  border-radius: 10px; /* Adjust as needed for rounded corners */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-}
 /* Header styles */
 header {
   background-color: white;
@@ -83,27 +76,34 @@ main {
   color: white;
 }
 
-/* Ensures the cards take up one row and space evenly */
 .grid-3-columns {
   display: flex;
-  justify-content: center;
-  gap: 15px; /* Ensures 15px space between items */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 0 -7.5px;
 }
 
 .card {
   background: #f4f4f4;
-  border-radius: 20px; /* Ensures rounded corners */
-  overflow: hidden; /* Prevents content from overflowing */
-  margin: 0 15px; /* Adds spacing between cards */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds some depth */
-  flex: 1; /* Allows cards to grow */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content */
+  align-items: center;
+  margin-bottom: 15px;
+  flex: 0 0 100%;
+  transition: background-color 0.3s ease;
 }
-.card img {
-  border-radius: 10px 10px;
-  margin: 10px;
+
+.img-responsive {
+  width: 90%;
+  margin-top: 15px;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
 .card-body {
@@ -111,7 +111,9 @@ main {
 }
 
 .card h4 {
-  margin: 20px 0 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 20px 0;
 }
 
 .card p {
@@ -129,20 +131,28 @@ main {
 /* media resizing */
 @media (min-width: 768px) {
   .card {
-    /* Adjust card sizing on larger screens */
-    max-width: calc(
-      33.333% - 30px
-    ); /* Adjust based on the gap and number of cards */
+    flex: 0 0 calc(33.333% - 30px);
+    margin-bottom: 15px;
   }
 
   .grid-3-columns {
-    justify-content: space-between; /* Adjusts spacing on larger screens */
+    justify-content: space-between;
   }
-}
 
-@media (min-width: 1200px) {
-  header {
-    background-size: 70%; /* Slightly larger than 'contain' to zoom in */
-    background-position: right top 20%;
+  @media (min-width: 1024px) {
+    .card:hover .img-responsive {
+      filter: grayscale(0%);
+    }
+
+    .card:hover {
+      background-color: var(--accent-lighter);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    header {
+      background-size: 70%;
+      background-position: right top 20%;
+    }
   }
 }
