@@ -134,6 +134,19 @@ header a:hover {
 .text-center {
   text-align: center;
 }
+/*instagram posts*/
+.instagram-posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 30px auto 30px;
+}
+
+.instagram-media,
+.instagram-media iframe {
+  border-radius: 15px;
+  overflow: hidden;
+}
 
 /* Footer styles */
 footer {
@@ -204,8 +217,17 @@ ul li a:hover {
   .long-portrait {
     display: none;
   }
+
+  .instagram-posts {
+    grid-template-columns: 1fr; /* Single column for smartphones */
+  }
 }
 
+@media (max-width: 1024px) {
+  .instagram-posts {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for iPad sizes */
+  }
+}
 @media (min-width: 768px) {
   .card {
     flex: 0 0 calc(33.333% - 30px);
